@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnIt
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         mFloatingActionButton = findViewById(R.id.floatingActionButton);
         mRecyclerView.addOnItemTouchListener(this);
+        if (mPortals.isEmpty()){
+            mPortals.add(new Portal("hva", "https:/www.hva.nl"));
+        }
+        updateUI();
 
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
